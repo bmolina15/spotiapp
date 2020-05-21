@@ -8,6 +8,11 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ROUTES } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { CardsComponent } from './components/cards/cards.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   declarations: [
@@ -16,8 +21,16 @@ import { ROUTES } from './app.routes';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
+    NoimagePipe,
+    DomseguroPipe,
+    CardsComponent,
+    LoadingComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(ROUTES, { useHash: true })],
+  imports: [
+    HttpClientModule,
+    BrowserModule,
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
